@@ -1,4 +1,4 @@
-/* UUID: 947283-542442-475862-256082- */ 
+/* UUID: 797358-376220-666997-558387- */ 
 
 html {
     margin: auto;
@@ -8,8 +8,21 @@ body {
     margin: 0;
     width: min-content;
 }
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
 img {
   border: 0px;
+}
+
+svg:not(:root) {
+  overflow: hidden;
 }
 
 button, input, optgroup, select, textarea {
@@ -20,6 +33,10 @@ button, input, optgroup, select, textarea {
 
 input {
   line-height: normal;
+}
+
+textarea {
+  overflow: auto;
 }
 
 * {
@@ -102,6 +119,10 @@ img {
   overflow: hidden;
 }
 
+.placeholder_background {
+  background-color: rgb(238, 238, 238);
+}
+
 .wordwrap {
   white-space: pre-wrap;
   overflow-wrap: break-word;
@@ -114,57 +135,6 @@ body, input, button, select, textarea {
 input, textarea, select {
   font-size: 13px;
   font-weight: lighter;
-}
-
-.range-bar {
-  background-color: rgb(169, 172, 177);
-  border-radius: 15px;
-  display: block;
-  height: 4px;
-  position: relative;
-  width: 100%;
-}
-
-.range-quantity {
-  background-color: rgb(1, 122, 253);
-  border-radius: 15px;
-  display: block;
-  height: 100%;
-  width: 0px;
-}
-
-.range-handle {
-  background-color: rgb(255, 255, 255);
-  border-radius: 100%;
-  cursor: move;
-  height: 19px;
-  left: 0px;
-  top: -8px;
-  position: absolute;
-  width: 19px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px;
-}
-
-.range-min, .range-max {
-  color: rgb(24, 24, 25);
-  font-size: 12px;
-  height: 20px;
-  padding-top: 4px;
-  position: absolute;
-  text-align: center;
-  top: -9px;
-  width: 24px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.range-min {
-  left: -24px;
-}
-
-.range-max {
-  right: -24px;
 }
 
 .element.fc.Button .btn {
@@ -328,35 +298,104 @@ input, textarea, select {
   transform: none !important;
 }
 
-.element.fc.Slider .slider-wrapper {
+.element.fc.WebContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.element.fc.WebContainer iframe {
+  width: 100%;
+  height: 100%;
+  border-style: none;
+  background: rgb(238, 238, 238);
+}
+
+.c3 svg {
+  font: 10px sans-serif;
+}
+
+.c3 line, .c3 path {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+}
+
+.c3 text {
+  user-select: none;
+}
+
+.c3-bars path, .c3-event-rect, .c3-legend-item-tile, .c3-xgrid-focus, .c3-ygrid {
+  shape-rendering: crispedges;
+}
+
+.c3-grid line {
+  stroke: rgb(170, 170, 170);
+}
+
+.c3-xgrid, .c3-ygrid {
+  stroke-dasharray: 3, 3;
+}
+
+.c3-text.c3-empty {
+  fill: gray;
+  font-size: 2em;
+}
+
+.c3-line {
+  stroke-width: 1px;
+}
+
+.c3-bar {
+  stroke-width: 0;
+}
+
+.c3-brush .extent {
+  fill-opacity: 0.1;
+}
+
+.c3-legend-item {
+  font-size: 12px;
+}
+
+.c3-tooltip-container {
+  z-index: 10;
+}
+
+.c3-area {
+  stroke-width: 0;
+  opacity: 0.2;
+}
+
+.c3-chart-arcs-title {
+  dominant-baseline: middle;
+  font-size: 1.3em;
+}
+
+.element.fc.DrawViewContainer {
+  width: 100%;
+  position: absolute;
+}
+
+.drawViewPic {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+}
+
+.element.fc.Textarea .textView {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding-left: 5px;
+}
+
+.element.fc.Textarea .textView-wrapper {
   width: 100%;
   height: 100%;
   display: table;
   position: relative;
-}
-
-.element.fc.Slider .slider_div {
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-weight: normal;
-}
-
-.element.fc.Slider .slider_div {
-  text-align: center;
-  padding: 0px 24px;
-}
-
-.element.fc.Slider .range-max {
-  background-image: url("../img/objects/missing-icon.svg");
-  width: 20px;
-}
-
-.element.fc.Slider .range-min {
-  background-image: url("../img/objects/missing-icon.svg");
-  width: 20px;
 }
 
 .textView {
@@ -372,26 +411,8 @@ input, textarea, select {
   outline: none;
 }
 
-.main-button {
-  background: linear-gradient(to right, rgb(41, 128, 185) 0%, rgb(52, 152, 219) 100%);
-  width: 295px;
-  height: 40px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
-  margin: 10px;
-  border-radius: 200px;
-}
-
-.main-button {
-  background: linear-gradient(to right, rgb(41, 128, 185) 0%, rgb(52, 152, 219) 100%);
-  width: 295px;
-  height: 40px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
-  margin: 10px;
-  border-radius: 200px;
-}
-
 .pin-key-empty {
-  border: 1px solid white;
+  border: 1px solid black;
   width: 16px;
   height: 16px;
   border-radius: 100%;
@@ -403,7 +424,7 @@ input, textarea, select {
 }
 
 .pin-key-empty {
-  border: 1px solid white;
+  border: 1px solid black;
   width: 16px;
   height: 16px;
   border-radius: 100%;
